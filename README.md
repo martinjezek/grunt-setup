@@ -12,7 +12,7 @@ Install Grunt to your project:
 
 - you're at `root` of your project
 - if you don't have a `package.json` then run `$ npm init` and fill in your project info
-- find out more about [package.json][package.json]
+- [find out more][package.json] about `package.json`
 
 ```javascript
 {
