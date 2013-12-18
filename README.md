@@ -18,9 +18,7 @@ Install Grunt to your project:
 {
     "name": "grunt-setup",
     "version": "0.0.0",
-    "description": "Basic setup of Grunt.js",
-    "author": "Martin Jezek",
-    "license": "MIT"
+    "description": "Basic setup of Grunt.js"
 }
 ```
 
@@ -35,8 +33,6 @@ Install Grunt to your project:
     "name": "grunt-setup",
     "version": "0.0.0",
     "description": "Basic setup of Grunt.js",
-    "author": "Martin Jezek",
-    "license": "MIT",
     "devDependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-jshint": "~0.7.2",
