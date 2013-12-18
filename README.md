@@ -57,7 +57,8 @@ module.exports = function(grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %>' 
+                      + ' - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
                 src: 'public/js/myModule.js',
@@ -78,7 +79,7 @@ module.exports = function(grunt) {
 };
 ```
 
-- run default tasks by `$ grunt` or specific tasks by '$ grunt test'
+- run default tasks by `$ grunt` or specific tasks by `$ grunt test`
 
 [grunt.js]: http://gruntjs.com/
 [package.json]: https://npmjs.org/doc/json.html
