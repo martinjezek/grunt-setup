@@ -2,7 +2,7 @@
 
 A few thoughts how to set up Grunt - The JavaScript Task Runner.
 
-- [Grunt.js][grunt.js]
+- [Grunt: The JavaScript Task Runner][grunt.js]
 
 Install Grunt-CLI via NPM:
 
@@ -41,7 +41,7 @@ Install Grunt to your project:
 }
 ```
 
-- add a new file 'Gruntfile.js' to 'root' of your project next to 'package.json'
+- add a new file `Gruntfile.js` to `root` of your project next to `package.json`
 
 ```javascript
 'use strict';
