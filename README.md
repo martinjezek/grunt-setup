@@ -33,6 +33,7 @@ Install Grunt to your project:
     "name": "grunt-setup",
     "version": "0.0.0",
     "description": "Basic setup of Grunt.js",
+    "private": true,
     "devDependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-jshint": "~0.7.2",
