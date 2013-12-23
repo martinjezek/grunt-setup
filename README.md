@@ -143,20 +143,20 @@ module.exports = function(grunt) {
             },
             src: [
                 'Gruntfile.js',
-                'spec/**/*.js',
+                'test/**/*.js',
                 'public/js/**/*.js'
             ]
         },
         jasmine : {
             options : {
-                specs : 'spec/**/*.js'
+                specs : 'test/**/*.js'
             },
             src : 'public/js/**/*.js'
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> ' 
-                + '- <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %>' 
+                + ' - <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
             },
             build: {
                 src: 'public/js/myModule.js',
