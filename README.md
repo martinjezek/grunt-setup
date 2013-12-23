@@ -134,53 +134,53 @@ Run jasmine specs headlessly through PhantomJS.
 
 module.exports = function(grunt) {
 
-    // Project configuration.
+    // Project configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         jshint: {
             options: {
                 jshintrc: '.jshintrc'
             },
-            all: [
+            src: [
                 'Gruntfile.js',
                 'spec/**/*.js',
                 'public/js/**/*.js'
             ]
         },
+        jasmine : {
+            options : {
+                specs : 'spec/**/*.js'
+            },
+            src : 'public/js/**/*.js'
+        },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %>' 
-                + ' - <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> ' 
+                + '- <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
             },
             build: {
                 src: 'public/js/myModule.js',
                 dest: 'public/build/js/myModule.min.js'
             }
-        },
-        jasmine : {
-            options : {
-                specs : 'spec/**/*.js'
-            },
-            all : 'public/js/**/*.js'
         }
     });
 
-    // Load the plugins
+    // Load plugins
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    // Default tasks.
-    grunt.registerTask('default', ['test', 'uglify']);
-
-    // Test tasks.
+    // Test tasks
     grunt.registerTask('test', ['jshint', 'jasmine']);
+
+    // Default tasks
+    grunt.registerTask('default', ['test', 'uglify']);
 };
 ```
 ## Run Grunt Tasks
 
 - Run default tasks by `$ grunt`
-- Run specific tasks by `$ grunt test`
+- Run test tasks by `$ grunt test` or `$ npm test`
 
 [grunt.js]: http://gruntjs.com/
 [package.json]: https://npmjs.org/doc/json.html
