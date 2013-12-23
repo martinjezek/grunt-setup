@@ -44,6 +44,8 @@ Install `grunt-cli` globally and you'll have access to the grunt command anywher
 
 ## Install JSHint
 
+Validate files with JSHint.
+
 - [npm grunt-contrib-jshint][grunt-contrib-jshint]
 - `$ npm install grunt-contrib-jshint --save-dev`
 
@@ -61,6 +63,8 @@ Install `grunt-cli` globally and you'll have access to the grunt command anywher
 ```
 
 ## Install Uglify
+
+Minify files with UglifyJS.
 
 - [npm grunt-contrib-uglify][grunt-contrib-uglify]
 - `$ npm install grunt-contrib-uglify --save-dev`
