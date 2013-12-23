@@ -4,28 +4,60 @@ A few thoughts how to set up Grunt - The JavaScript Task Runner.
 
 - [Grunt: The JavaScript Task Runner][grunt.js]
 
-Install Grunt-CLI via NPM:
+## Install Grunt-CLI:
 
+Install `grunt-cli` globally and you'll have access to the grunt command anywhere on your system.
 - `$ npm install grunt-cli -g`
 
-Install Grunt to your project:
+## Install Grunt
 
-- you're at `root` of your project
-- if you don't have a `package.json` then run `$ npm init` and fill in your project info
+- You're at `root` of your project
+- If you don't have a `package.json` then run `$ npm init` and fill in your project info, else run `$ npm install`
 - [find out more][package.json] about `package.json`
 
 ```javascript
 {
     "name": "grunt-setup",
     "version": "0.0.0",
-    "description": "Basic setup of Grunt.js"
+    "description": "Basic setup of Grunt.js",
+    "private": true
 }
 ```
 
-- install the latest grunt module and save it to devDependencies
+- Install the latest grunt module and save it to devDependencies
 - `$ npm install grunt --save-dev`
-- install other great modules
+
+```javascript
+{
+    "name": "grunt-setup",
+    "version": "0.0.0",
+    "description": "Basic setup of Grunt.js",
+    "private": true,
+    "devDependencies": {
+        "grunt": "~0.4.2",
+    }
+}
+```
+
+## Install JSHint
+
 - `$ npm install grunt-contrib-jshint --save-dev`
+
+```javascript
+{
+    "name": "grunt-setup",
+    "version": "0.0.0",
+    "description": "Basic setup of Grunt.js",
+    "private": true,
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-jshint": "~0.7.2",
+    }
+}
+```
+
+## Install Uglify
+
 - `$ npm install grunt-contrib-uglify --save-dev`
 
 ```javascript
@@ -41,8 +73,9 @@ Install Grunt to your project:
     }
 }
 ```
+## Add Gruntfile.js
 
-- add a new file `Gruntfile.js` to `root` of your project next to `package.json`
+- Add a new file `Gruntfile.js` to `root` of your project next to `package.json`
 
 ```javascript
 'use strict';
@@ -59,7 +92,7 @@ module.exports = function(grunt) {
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> - v<%= pkg.version %>' 
-                      + ' - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                + ' - <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
             },
             build: {
                 src: 'public/js/myModule.js',
@@ -79,8 +112,10 @@ module.exports = function(grunt) {
     grunt.registerTask('test', ['jshint']);
 };
 ```
+## Run Grunt Tasks
 
-- run default tasks by `$ grunt` or specific tasks by `$ grunt test`
+- Run default tasks by `$ grunt`
+- Run specific tasks by `$ grunt test`
 
 [grunt.js]: http://gruntjs.com/
 [package.json]: https://npmjs.org/doc/json.html
