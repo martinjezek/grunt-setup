@@ -82,6 +82,29 @@ Minify files with UglifyJS.
     }
 }
 ```
+
+## Install Jasmine
+
+Run jasmine specs headlessly through PhantomJS.
+
+- [npm grunt-contrib-jasmine][grunt-contrib-jasmine]
+- `$ npm install grunt-contrib-jasmine --save-dev`
+
+```javascript
+{
+    "name": "grunt-setup",
+    "version": "0.0.0",
+    "description": "Basic setup of Grunt.js",
+    "private": true,
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-jshint": "~0.7.2",
+        "grunt-contrib-uglify": "~0.2.7",
+        "grunt-contrib-jasmine": "~0.5.2"
+    }
+}
+```
+
 ## Add Gruntfile.js
 
 - Add a new file `Gruntfile.js` to `root` of your project next to `package.json`
