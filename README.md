@@ -23,7 +23,11 @@ Install `grunt-cli` globally and you'll have access to the grunt command anywher
     "name": "grunt-setup",
     "version": "0.0.0",
     "description": "Basic setup of Grunt.js",
-    "private": true
+    "private": true,
+    "scripts": {
+        "test": "grunt test"
+    },
+    "dependencies": {}
 }
 ```
 
@@ -36,9 +40,13 @@ Install `grunt-cli` globally and you'll have access to the grunt command anywher
     "version": "0.0.0",
     "description": "Basic setup of Grunt.js",
     "private": true,
+    "scripts": {
+        "test": "grunt test"
+    },
     "devDependencies": {
         "grunt": "~0.4.2",
-    }
+    },
+    "dependencies": {}
 }
 ```
 
@@ -55,10 +63,14 @@ Validate files with JSHint.
     "version": "0.0.0",
     "description": "Basic setup of Grunt.js",
     "private": true,
+    "scripts": {
+        "test": "grunt test"
+    },
     "devDependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-jshint": "~0.7.2",
-    }
+    },
+    "dependencies": {}
 }
 ```
 
@@ -75,11 +87,15 @@ Minify files with UglifyJS.
     "version": "0.0.0",
     "description": "Basic setup of Grunt.js",
     "private": true,
+    "scripts": {
+        "test": "grunt test"
+    },
     "devDependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-jshint": "~0.7.2",
         "grunt-contrib-uglify": "~0.2.7"
-    }
+    },
+    "dependencies": {}
 }
 ```
 
@@ -96,12 +112,16 @@ Run jasmine specs headlessly through PhantomJS.
     "version": "0.0.0",
     "description": "Basic setup of Grunt.js",
     "private": true,
+    "scripts": {
+        "test": "grunt test"
+    },
     "devDependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-jshint": "~0.7.2",
         "grunt-contrib-uglify": "~0.2.7",
         "grunt-contrib-jasmine": "~0.5.2"
-    }
+    },
+    "dependencies": {}
 }
 ```
 
@@ -118,8 +138,14 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         jshint: {
-            files: ['Gruntfile.js', 'public/js/**/*.js'],
-            options: grunt.file.readJSON('.jshintrc')
+            options: {
+                jshintrc: '.jshintrc'
+            },
+            all: [
+                'Gruntfile.js',
+                'spec/**/*.js',
+                'public/js/**/*.js'
+            ]
         },
         uglify: {
             options: {
@@ -130,18 +156,25 @@ module.exports = function(grunt) {
                 src: 'public/js/myModule.js',
                 dest: 'public/build/js/myModule.min.js'
             }
+        },
+        jasmine : {
+            options : {
+                specs : 'spec/**/*.js'
+            },
+            all : 'public/js/**/*.js'
         }
     });
 
     // Load the plugins
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
 
     // Default tasks.
-    grunt.registerTask('default', ['jshint', 'uglify']);
+    grunt.registerTask('default', ['test', 'uglify']);
 
     // Test tasks.
-    grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('test', ['jshint', 'jasmine']);
 };
 ```
 ## Run Grunt Tasks
