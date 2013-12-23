@@ -12,8 +12,9 @@ Install `grunt-cli` globally and you'll have access to the grunt command anywher
 ## Install Grunt
 
 - You're at `root` of your project
-- If you don't have a `package.json` then run `$ npm init` and fill in your project info, else run `$ npm install`
-- [find out more][package.json] about `package.json`
+- If you don't have a `package.json` then run `$ npm init` and fill in your project info
+- Else run `$ npm install`
+- [Find out more][package.json] about `package.json`
 
 ```javascript
 {
