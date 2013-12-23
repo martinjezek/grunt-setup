@@ -74,31 +74,6 @@ Validate files with JSHint.
 }
 ```
 
-## Install Uglify
-
-Minify files with UglifyJS.
-
-- [npm grunt-contrib-uglify][grunt-contrib-uglify]
-- `$ npm install grunt-contrib-uglify --save-dev`
-
-```javascript
-{
-    "name": "grunt-setup",
-    "version": "0.0.0",
-    "description": "Basic setup of Grunt.js",
-    "private": true,
-    "scripts": {
-        "test": "grunt test"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.2",
-        "grunt-contrib-jshint": "~0.7.2",
-        "grunt-contrib-uglify": "~0.2.7"
-    },
-    "dependencies": {}
-}
-```
-
 ## Install Jasmine
 
 Run jasmine specs headlessly through PhantomJS.
@@ -118,8 +93,33 @@ Run jasmine specs headlessly through PhantomJS.
     "devDependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-jshint": "~0.7.2",
-        "grunt-contrib-uglify": "~0.2.7",
         "grunt-contrib-jasmine": "~0.5.2"
+    },
+    "dependencies": {}
+}
+```
+
+## Install Uglify
+
+Minify files with UglifyJS.
+
+- [npm grunt-contrib-uglify][grunt-contrib-uglify]
+- `$ npm install grunt-contrib-uglify --save-dev`
+
+```javascript
+{
+    "name": "grunt-setup",
+    "version": "0.0.0",
+    "description": "Basic setup of Grunt.js",
+    "private": true,
+    "scripts": {
+        "test": "grunt test"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-jshint": "~0.7.2",
+        "grunt-contrib-jasmine": "~0.5.2",
+        "grunt-contrib-uglify": "~0.2.7"
     },
     "dependencies": {}
 }
