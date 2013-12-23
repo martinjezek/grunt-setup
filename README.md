@@ -7,6 +7,8 @@ A few thoughts how to set up Grunt - The JavaScript Task Runner.
 ## Install Grunt-CLI:
 
 Install `grunt-cli` globally and you'll have access to the grunt command anywhere on your system.
+
+- [npm grunt-cli][grunt-cli]
 - `$ npm install grunt-cli -g`
 
 ## Install Grunt
@@ -42,6 +44,7 @@ Install `grunt-cli` globally and you'll have access to the grunt command anywher
 
 ## Install JSHint
 
+- [npm grunt-contrib-jshint][grunt-contrib-jshint]
 - `$ npm install grunt-contrib-jshint --save-dev`
 
 ```javascript
@@ -59,6 +62,7 @@ Install `grunt-cli` globally and you'll have access to the grunt command anywher
 
 ## Install Uglify
 
+- [npm grunt-contrib-uglify][grunt-contrib-uglify]
 - `$ npm install grunt-contrib-uglify --save-dev`
 
 ```javascript
@@ -120,3 +124,8 @@ module.exports = function(grunt) {
 
 [grunt.js]: http://gruntjs.com/
 [package.json]: https://npmjs.org/doc/json.html
+
+[grunt-cli]: https://npmjs.org/package/grunt-cli
+[grunt-contrib-jshint]: https://npmjs.org/package/grunt-contrib-jshint
+[grunt-contrib-uglify]: https://npmjs.org/package/grunt-contrib-uglify
+[grunt-contrib-jasmine]: https://npmjs.org/package/grunt-contrib-jasmine
