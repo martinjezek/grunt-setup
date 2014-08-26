@@ -1,8 +1,8 @@
 # Grunt - Setup
 
-A few thoughts how to set up Grunt - The JavaScript Task Runner.
+> A few thoughts how to set up Grunt - The JavaScript Task Runner.
 
-- [Grunt: The JavaScript Task Runner][grunt.js]
+- [Grunt.js][grunt.js]
 
 ## Install Grunt-CLI:
 
@@ -170,17 +170,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    // Test tasks
+    // Tasks
     grunt.registerTask('test', ['jshint', 'jasmine']);
-
-    // Default tasks
-    grunt.registerTask('default', ['test', 'uglify']);
+    grunt.registerTask('default', ['test']);
+    grunt.registerTask('uglify', ['test', 'uglify']);
 };
 ```
 ## Run Grunt Tasks
 
-- Run default tasks by `$ grunt`
-- Run test tasks by `$ grunt test` or `$ npm test`
+- Run test tasks by `$ grunt test` or `$ npm test` or just `$ grunt`
+- Run uglify task by `$ grunt uglify`
 
 [grunt.js]: http://gruntjs.com/
 [package.json]: https://npmjs.org/doc/json.html
